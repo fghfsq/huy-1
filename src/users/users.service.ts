@@ -9,7 +9,7 @@ export class UsersService {
     constructor(@InjectRepository(UserEntity) private repository:Repository<UserEntity>){}
 
     async create(dto:CreateUserDto){
-        return this.repository.create(dto)
+        return this.repository.save(dto)
     }
 
     async getUserByEmail(email:string){
